@@ -1,6 +1,5 @@
-// ✅ Load API URL from environment variables (Render)
-// eslint-disable-next-line no-undef
-const API_BASE_URL = process.env.REACT_APP_API_URL;
+// services/api.js
+const API_BASE_URL = 'http://localhost:8000';
 
 // Headers for JSON requests
 const jsonHeaders = {
@@ -121,7 +120,7 @@ export const compareMultipleJDs = async (resumeText, jdArray) => {
     const formData = new FormData();
     formData.append('resume_text', resumeText);
     
-    jdArray.forEach((jd) => {
+    jdArray.forEach((jd, index) => {
       formData.append('jd_texts', jd);
     });
 
