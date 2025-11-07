@@ -16,11 +16,15 @@ app = FastAPI(
     description="Analyze resumes for ATS compatibility and JD matching",
     version="1.0.0"
 )
+origins = [
+    "https://resume-analyser-frontend-8doz.onrender.com",
+    "http://localhost:5173"
+]
 
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
